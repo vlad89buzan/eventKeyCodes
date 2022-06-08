@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+@@include('html/head.html',{
+"title":"eventKeyCodes"
+})
+
+<body>
+	<div class="wrapper">
+		
+		<main>
+			<div class="container" id="insert">
+				<div class="key">
+					press any key
+				</div>
+			</div>
+		
+
+		</main>
+		
+	</div>
+	<script>
+const insert = document.getElementById('insert');
+
+		window.addEventListener('keydown',(e)=>{
+			insert.innerHTML = `
+			<div class="key">
+					${e.key === ' ' ? 'Space' : e.key}
+					<small>Event.key</small>
+				</div>
+				<div class="key">
+					${e.keyCode}
+					<small>Event.key</small>
+				</div>
+				<div class="key">
+					${e.code}
+					<small>event.code</small>
+				</div>
+				
+				`
+		})
+	</script>
+</body>
+
+</html>
